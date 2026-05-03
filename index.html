@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Desk</title>
+<link rel="stylesheet" href="hstyle.css">
+</head>
+
+<body>
+
+<div class="scene">
+
+    <!-- ID CARD (LEFT) -->
+    <a href="about.html" class="id-card">
+        <img src="images/id2.png" class="card-base">
+        <img src="images/id3.png" class="card-photo">
+    </a>
+
+    <!-- HEADER (TOP CENTER ABOVE MAT) -->
+    <div class="header-area">
+        <img src="images/header.png" class="hero-title">
+        <p class="tagline">Discover my work and journey</p>
+    </div>
+
+    <!-- DESK (CENTER RIGHT) -->
+    <div class="desk-wrapper">
+
+        <div class="mat-container">
+            <img src="images/mat01.png" class="mat">
+
+            <a class="item camera" href="Data.html">
+                <img src="images/camm.png">
+            </a>
+
+            <a class="item vinyl">
+                <img src="images/music.png">
+            </a>
+
+            <a class="item journal" href="journal.html">
+                <img src="images/journal.png">
+            </a>
+
+            <a class="item cat">
+                <img src="images/jubi.png">
+            </a>
+
+            <a class="item coke">
+                <img src="images/coke.png">
+            </a>
+
+            <a class="item folder" href="creativecoding.html">
+                <img src="images/cc.png">
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- PARALLAX -->
+<script>
+const desk = document.querySelector(".desk-wrapper");
+
+document.addEventListener("mousemove", (e) => {
+    let x = (window.innerWidth / 2 - e.clientX) / 40;
+    let y = (window.innerHeight / 2 - e.clientY) / 40;
+
+    desk.style.transform =
+        `translate(-50%, -50%) rotateY(${x}deg) rotateX(${y}deg)`;
+});
+</script>
+
+</body>
+</html>
+

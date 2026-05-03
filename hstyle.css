@@ -1,0 +1,199 @@
+@font-face {
+    font-family: "Partsold";
+    src: url(Partsold.otf);
+}
+
+/* ===== RESET ===== */
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== BACKGROUND (CLEAN PURPLE THEME) ===== */
+/* BLURRED BACKGROUND LAYER */ body::before { 
+    content: ""; position: fixed; inset: 0; 
+    background: url("images/bg.jpg") center/cover no-repeat; 
+    filter: blur(0.5px) brightness(0.8); 
+    z-index: -1; }
+/* ===== MAIN SCENE ===== */
+.scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* ===== HEADER (ALIGNED WITH MAT) ===== */
+.header-area {
+    position: absolute;
+    top: 8%;
+    left: 65%;   /* SAME AXIS AS DESK */
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.hero-title {
+    width: 460px;
+    max-width: 45vw;
+
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.25))
+            drop-shadow(0 0 25px rgba(255,255,255,0.15));
+
+    animation: floatTitle 4s ease-in-out infinite;
+}
+
+.tagline {
+    color: white;
+    font-size: 15px;
+    margin-top: 12px;
+    opacity: 0.9;
+}
+
+/* FLOAT ANIMATION */
+@keyframes floatTitle {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0px); }
+}
+
+/* ===== DESK (ALIGNED WITH HEADER) ===== */
+.desk-wrapper {
+    position: absolute;
+    top: 62%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    transition: 0.4s ease;
+    transform-style: preserve-3d;
+}
+
+/* ===== MAT ===== */
+.mat-container {
+    position: relative;
+    width: 600px;
+}
+
+.mat {
+    width: 100%;
+    display: block;
+}
+
+/* ===== ITEMS ===== */
+.item {
+    position: absolute;
+    cursor: pointer;
+    transition: 0.3s ease;
+    animation: float 4s ease-in-out infinite;
+}
+
+.item img {
+    width: 100%;
+    display: block;
+}
+
+/* HOVER */
+.item:hover {
+    transform: scale(1.1) translateY(-6px);
+    filter: drop-shadow(0 10px 12px rgba(0,0,0,0.2));
+}
+
+/* FLOAT */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+}
+
+/* ===== ITEM POSITIONS ===== */
+.camera { width: 150px; top: 40px; left: 40px; }
+.vinyl { width: 150px; top: 30px; right: 40px; }
+.journal { width: 150px; bottom: 40px; left: 120px; }
+.cat { width: 140px; bottom: 30px; right: 40px; }
+.coke { width: 80px; top: 40px; left: 250px; }
+.folder { width: 150px; bottom: 20px; left: 230px; }
+
+/* ===== ID CARD ===== */
+.id-card {
+    position: absolute;
+    top: 6%;
+    left: 5%;
+
+    width: 240px;   /* bigger now */
+
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    filter: drop-shadow(0 20px 25px rgba(0,0,0,0.3));
+}
+
+/* CARD IMAGE */
+
+.id-card img {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+}
+.base {
+    width:200% ;
+}
+/* STRAP */
+.id-card::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 60px;
+    height: 80px;
+
+    background: linear-grad(180deg, #ff6aa6, #ff3d7f);
+    border-radius: 10px;
+
+    box-shadow: 0 8px 15px rgba(0,0,0,0.25);
+}
+
+/* PHOTO POP */
+.card-photo {
+    position: absolute;
+    top: 35%;
+    left: 22%;
+    width: 55%;
+
+    opacity: 0;
+    transform: scale(0.7);
+    transition: 0.3s ease;
+}
+
+.id-card:hover .card-photo {
+    opacity: 1;
+    transform: scale(1.4) translateY(-15px);
+}
+
+/* SUBTLE HOVER */
+.id-card:hover {
+    transform: translateY(-5px) scale(1.03);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 900px) {
+
+    .desk-wrapper {
+        left: 50%;
+        top: 65%;
+    }
+
+    .header-area {
+        left: 50%;
+    }
+
+    .id-card {
+        left: 20px;
+        top: 20px;
+        width: 160px;
+    }
+
+    .hero-title {
+        width: 320px;
+    }
+}

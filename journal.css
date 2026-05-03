@@ -1,0 +1,98 @@
+/* Core Styling */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: #ffffff; /* Dark desk background */
+    color: #333;
+    background-image:url(images/bg.jpg);
+    
+}
+
+.journal-stack {
+    width: 100%;
+}
+
+/* THE STACKING LOGIC */
+.stack-layer {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* THE PAPER DESIGN */
+.paper-sheet {
+    background-color: #fcfaf2;
+    width: 100%;
+    max-width: 900px;
+    height: 85vh;
+    padding: 60px;
+    position: relative;
+    box-shadow: 0 -10px 40px rgba(0,0,0,0.5); /* Top shadow for stacking depth */
+    
+    /* Paper Grain and Lines */
+    background-image: 
+        url('https://www.transparenttextures.com/patterns/handmade-paper.png'),
+        repeating-linear-gradient(transparent, transparent 31px, #efede5 31px, #efede5 32px);
+}
+
+.date-stamp {
+    font-family: 'Special Elite', monospace;
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+/* Page Layout */
+.page-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+}
+
+/* Typography */
+.handwritten-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    color: #8b3a3a;
+    margin-bottom: 20px;
+}
+
+.journal-text {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.35rem;
+    line-height: 32px; /* Syncs with lines */
+    color: #333;
+}
+
+/* Polaroid Photo */
+.polaroid {
+    background: white;
+    padding: 12px 12px 35px 12px;
+    box-shadow: 3px 6px 15px rgba(0,0,0,0.1);
+    transform: rotate(3deg);
+    border: 1px solid #eee;
+    width: 100%;
+}
+
+.polaroid img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Visual Variation (Odd/Even Tilt) */
+.stack-layer:nth-child(even) .paper-sheet { transform: rotate(0.5deg); }
+.stack-layer:nth-child(odd) .paper-sheet { transform: rotate(-0.5deg); }
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .page-grid { grid-template-columns: 1fr; }
+    .image-content { display: none; }
+    .paper-sheet { padding: 30px; height: 90vh; }
+}
+

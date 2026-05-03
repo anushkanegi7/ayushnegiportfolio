@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: url("images/bg.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+/* MAIN BOX */
+.captcha-box {
+    width: 420px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+/* HEADER */
+.captcha-header {
+    background: #1e88e5;
+    color: white;
+    padding: 20px;
+}
+
+.captcha-header p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.captcha-header h2 {
+    margin: 5px 0 0;
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    padding: 10px;
+}
+
+.cell {
+    position: relative;
+    cursor: pointer;
+}
+
+.cell img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+}
+
+/* TICK MARK */
+.tick {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #1e88e5;
+    color: white;
+    font-size: 14px;
+    padding: 3px 6px;
+    border-radius: 3px;
+}
+
+/* BUTTON */
+.verify-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background: #1e88e5;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.verify-btn:hover {
+    background: #1565c0;
+}

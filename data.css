@@ -1,0 +1,87 @@
+body {
+    background: #fff;
+    margin: 0;
+    overflow: hidden; /* Keeps the collage as a single artistic screen */
+}
+
+.collage-wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh; /* Changed from 1200px to full screen */
+    margin: 0 auto;
+    background: #fafafa; /* Very light grey to make white photo borders pop */
+}
+
+/* CENTER BRANDING */
+.branding {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 100;
+    pointer-events: none; /* Allows you to click images behind the text */
+}
+
+.branding h1 {
+    font-family: 'serif';
+    font-size: clamp(3rem, 10vw, 6rem); /* Responsive font size */
+    color: #0b6633;
+    line-height: 0.8;
+    letter-spacing: -2px;
+}
+
+/* GLOBAL ITEM STYLE */
+.art-item {
+    position: absolute;
+    transition: all 0.4s ease;
+    cursor: crosshair;
+    box-shadow: 2px 4px 15px rgba(0,0,0,0.08); /* Soft photo shadow */
+    border: 5px solid white; /* Classic photo border */
+}
+
+.art-item img {
+    width: 100%;
+    display: block;
+}
+
+.art-item:hover {
+    transform: scale(1.2) rotate(0deg) !important;
+    z-index: 500;
+    box-shadow: 10px 20px 30px rgba(0,0,0,0.15);
+}
+
+/* --- THE CENTERED CLUSTER (20 POSITIONS) --- */
+
+/* TOP LEFT CLUSTER */
+.p1 { width: 180px; top: 10%; left: 15%; transform: rotate(-5deg); }
+.p2 { width: 120px; top: 25%; left: 10%; transform: rotate(12deg); }
+.p3 { width: 140px; top: 15%; left: 35%; transform: rotate(-8deg); }
+.p4 { width: 110px; top: 40%; left: 5%; transform: rotate(5deg); }
+
+/* TOP RIGHT CLUSTER */
+.p5 { width: 200px; top: 5%; right: 15%; transform: rotate(8deg); }
+.p6 { width: 150px; top: 22%; right: 10%; transform: rotate(-4deg); } /* Vinyl */
+.p7 { width: 130px; top: 12%; right: 35%; transform: rotate(15deg); }
+.p8 { width: 160px; top: 35%; right: 5%; transform: rotate(-10deg); }
+
+/* BOTTOM LEFT CLUSTER */
+.p9 { width: 120px; bottom: 15%; left: 12%; transform: rotate(-12deg); }
+.p10 { width: 170px; bottom: 5%; left: 25%; transform: rotate(4deg); }
+.p11 { width: 150px; bottom: 30%; left: 8%; transform: rotate(10deg); }
+.p12 { width: 130px; bottom: 20%; left: 35%; transform: rotate(-6deg); }
+
+/* BOTTOM RIGHT CLUSTER */
+.p13 { width: 190px; bottom: 10%; right: 20%; transform: rotate(-5deg); }
+.p14 { width: 120px; bottom: 25%; right: 5%; transform: rotate(15deg); }
+.p15 { width: 140px; bottom: 5%; right: 40%; transform: rotate(-8deg); }
+.p16 { width: 160px; bottom: 40%; right: 12%; transform: rotate(6deg); }
+
+/* CENTER TIGHT CLUSTER (Overlap area) */
+.p17 { width: 100px; top: 35%; left: 42%; transform: rotate(-15deg); z-index: 5; }
+.p18 { width: 110px; top: 55%; right: 40%; transform: rotate(12deg); z-index: 5; }
+.p19 { width: 130px; bottom: 45%; left: 30%; transform: rotate(5deg); z-index: 5; }
+.p20 { width: 90px; top: 20%; left: 50%; transform: rotate(-10deg); z-index: 5; }
+
+/* VINYL SPECIFIC */
+.p6 img { border-radius: 50%; border: none; }

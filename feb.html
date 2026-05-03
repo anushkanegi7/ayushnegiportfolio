@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>February</title>
+<link rel="stylesheet" href="feb.css">
+</head>
+
+<body>
+
+<a href="journal.html" class="back-btn">←</a>
+
+<div class="calendar-container">
+
+```
+<!-- YOUR CALENDAR IMAGE -->
+<img src="images/feb(1).jpg" class="calendar-img">
+
+<!-- CLICK AREAS -->
+<div class="click day15" onclick="openEntry('15')"></div>
+<div class="click day27" onclick="openEntry('27')"></div>
+```
+
+</div>
+
+<!-- OVERLAY -->
+
+<div id="overlay" class="overlay">
+    <div class="entry-box">
+
+```
+    <span class="close" onclick="closeEntry()">×</span>
+
+    <h2 id="title"></h2>
+    <p id="text"></p>
+
+</div>
+```
+
+</div>
+
+<script>
+function openEntry(day){
+
+    document.getElementById("overlay").style.display = "flex";
+
+    if(day === "15"){
+        document.getElementById("title").innerText = "15 February";
+        document.getElementById("text").innerText =
+        "Worked on portfolio layout. Focused on desk interaction and composition.";
+    }
+
+    if(day === "27"){
+        document.getElementById("title").innerText = "27 February";
+        document.getElementById("text").innerText =
+        "Refined journal system. Decided to use calendar-based navigation.";
+    }
+}
+
+function closeEntry(){
+    document.getElementById("overlay").style.display = "none";
+}
+</script>
+
+</body>
+</html>

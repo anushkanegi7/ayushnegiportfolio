@@ -1,0 +1,90 @@
+body{
+margin:0;
+font-family: 'EB Garamond', serif;
+
+/* TEXTURED BACKGROUND */
+background:
+linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
+url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+
+}
+
+/* BACK BUTTON (TOP LEFT) */
+.back-btn{
+position:fixed;
+top:30px;
+left:30px;
+font-size:28px;
+text-decoration:none;
+color:#222;
+transition:0.3s;
+}
+
+.back-btn:hover{
+transform:translateX(-5px);
+}
+
+/* WRAPPER */
+.journal-wrapper{
+text-align:center;
+padding-top:80px;
+}
+
+/* TITLE */
+.title{
+font-size:70px;
+margin-bottom:10px;
+letter-spacing:1px;
+}
+
+.subtitle{
+opacity:0.6;
+margin-bottom:60px;
+font-size:18px;
+}
+
+/* GRID */
+.calendar-grid{
+display:flex;
+justify-content:center;
+gap:50px;
+flex-wrap:wrap;
+}
+
+/* CARD */
+.calendar-card{
+position:relative;
+width:280px;
+border-radius:20px;
+overflow:hidden;
+text-decoration:none;
+color:white;
+
+/* DEPTH */
+box-shadow:0 20px 40px rgba(0,0,0,0.25);
+
+transition:0.4s;
+}
+
+/* IMAGE */
+.calendar-card img{
+width:100%;
+display:block;
+}
+
+/* LABEL */
+.label{
+position:absolute;
+bottom:0;
+width:100%;
+padding:15px;
+background:linear-gradient(transparent, rgba(0,0,0,0.8));
+font-size:22px;
+text-align:center;
+}
+
+/* HOVER = LIFT EFFECT */
+.calendar-card:hover{
+transform:translateY(-10px) scale(1.05);
+box-shadow:0 30px 60px rgba(0,0,0,0.35);
+}

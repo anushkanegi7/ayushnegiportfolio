@@ -1,0 +1,91 @@
+body{
+margin:0;
+font-family:'EB Garamond', serif;
+background:#e8e6df;
+}
+
+/* BACK BUTTON */
+.back-btn{
+position:fixed;
+top:30px;
+left:30px;
+font-size:28px;
+text-decoration:none;
+color:#222;
+z-index:10;
+}
+
+/* CONTAINER */
+.calendar-container{
+position:relative;
+width:800px;
+margin:80px auto;
+}
+
+/* IMAGE */
+.calendar-img{
+width:100%;
+border-radius:20px;
+box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* CLICK AREAS */
+.click{
+position:absolute;
+cursor:pointer;
+}
+
+/* ⚠️ ADJUST THESE VALUES BASED ON YOUR IMAGE */
+
+/* 15 FEB */
+.day15{
+top:48%;
+left:12%;
+width:11%;
+height:10%;
+}
+
+/* 27 FEB */
+.day27{
+top:78%;
+left:55%;
+width:11%;
+height:10%;
+}
+
+/* OPTIONAL HOVER DEBUG */
+.click:hover{
+background:rgba(0,0,0,0.1);
+}
+
+/* OVERLAY */
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+display:none;
+justify-content:center;
+align-items:center;
+}
+
+/* ENTRY BOX */
+.entry-box{
+background:white;
+padding:50px;
+border-radius:20px;
+max-width:500px;
+text-align:center;
+box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* CLOSE */
+.close{
+position:absolute;
+top:20px;
+right:25px;
+font-size:28px;
+cursor:pointer;
+}
